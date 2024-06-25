@@ -6,9 +6,9 @@
     nix-darwin = {
         url = "github:LnL7/nix-darwin";
         inputs.nixpkgs.follows = "nixpkgs";
+	};
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
@@ -32,6 +32,17 @@
         environment.systemPackages = with pkgs; 
           [
           fastfetch
+	        neovim
+	        kitty
+	        fish
+	        zoxide
+	        tmux
+	        eza
+          bat
+	        starship
+	        stow
+          gh
+          lazygit
           ];
     };
   in
