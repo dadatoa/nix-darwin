@@ -26,21 +26,30 @@
         # The platform the configuration will be used on.
         # If you're on an Intel system, replace with "x86_64-darwin"
         nixpkgs.hostPlatform = "aarch64-darwin";
+        
+        # fingerprint for sudo
+        security.pam.enableSudoTouchIdAuth = true;
 
         # Declare the user that will be running `nix-darwin`.
-        users.users.$USER = {
-            name = "$USER";
-            home = "/Users/$USER";
+        users.users.dadatoa = {
+            name = "dadatoa";
+            home = "/Users/dadatoa";
         };
 
         # Create /etc/zshrc that loads the nix-darwin environment.
         programs.zsh.enable = true;
 
-        environment.systemPackages = [ ];
+        environment.systemPackages = with pkgs; 
+          [
+          fastfetch
+          kitty
+          fish
+          starship
+          ];
     };
   in
   {
-    darwinConfigurations."$HOSTNAME" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.dadabook = nix-darwin.lib.darwinSystem {
       modules = [
          configuration
       ];
