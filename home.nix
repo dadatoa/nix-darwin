@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./nvim.nix
+    ];
+
+  # allow unfree packages in home-manager
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "dadatoa";
   home.homeDirectory = "/Users/dadatoa";
   home.stateVersion = "24.05";
@@ -14,5 +21,9 @@
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
     };
-};
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }
