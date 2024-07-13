@@ -1,12 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./nvim.nix
-    ];
-
-  # allow unfree packages in home-manager
-  nixpkgs.config.allowUnfree = true;
+  # imports = [
+    # ./nvim.nix
+    # ];
 
   home.username = "dadatoa";
   home.homeDirectory = "/Users/dadatoa";

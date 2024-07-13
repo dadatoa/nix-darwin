@@ -20,6 +20,9 @@
         # Used for backwards compatibility. please read the changelog
         system.stateVersion = 4;
         nixpkgs.hostPlatform = "aarch64-darwin";
+        nixpkgs.config = {
+          allowUnfree = true;
+          };
         # fingerprint for sudo
         security.pam.enableSudoTouchIdAuth = true;
         # Declare the user that will be running `nix-darwin`.
@@ -43,6 +46,7 @@
 	        stow
           gh
           lazygit
+          telescope
           ];
     };
   in
