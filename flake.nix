@@ -47,6 +47,8 @@
           gh
           lazygit
           telescope
+          rclone
+          rsync
           ];
     };
   in
