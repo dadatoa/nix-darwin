@@ -47,6 +47,7 @@
           neovim
           rclone
           rsync
+          sesh
 	        starship
 	        stow
           telescope
