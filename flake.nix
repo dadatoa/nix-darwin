@@ -34,21 +34,24 @@
         programs.zsh.enable = true;
         environment.systemPackages = with pkgs; 
           [
-          fastfetch
-	        neovim
-	        kitty
-	        fish
-	        zoxide
-	        tmux
-	        eza
           bat
-	        starship
-	        stow
+          direnv
+          eza
+          fastfetch
+	        fish
+          fzf
           gh
+          git
+          kitty
           lazygit
-          telescope
+          neovim
           rclone
           rsync
+	        starship
+	        stow
+          telescope
+          tmux
+          zoxide
           ];
     };
   in
