@@ -42,6 +42,7 @@
           fzf
           gh
           git
+          glab
           kitty
           lazygit
           neovim
